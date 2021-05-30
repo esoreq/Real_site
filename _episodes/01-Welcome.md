@@ -1,5 +1,5 @@
 ---
-title: "Data science bootcamp"
+title: "Welcome to the Bootcamp"
 teaching: 15
 author: "Dr. Eyal Soreq" 
 date: "30/05/2021"
