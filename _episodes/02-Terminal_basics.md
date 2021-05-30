@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Linux Terminal"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "31/05/2021"
 teaching: 25
 exercises: 5
 questions:

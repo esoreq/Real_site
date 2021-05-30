@@ -1,7 +1,7 @@
 ---
 title: "Anaconda environment 101"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "31/05/2021"
 teaching: 20
 exercises: 20
 questions:

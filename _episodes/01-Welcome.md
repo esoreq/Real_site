@@ -2,7 +2,7 @@
 title: "Welcome to the Bootcamp"
 teaching: 15
 author: "Dr. Eyal Soreq" 
-date: "30/05/2021"
+date: "31/05/2021"
 start: true
 exercises: 0
 questions:

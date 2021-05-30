@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Bash Jupyter notebook"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "31/05/2021"
 teaching: 30
 exercises: 20
 questions:
