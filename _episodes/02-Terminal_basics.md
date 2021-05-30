@@ -367,6 +367,41 @@ A close relative of `echo` is `cat` (short for “concatenate“) one of the mor
 {: .output}
 
 
+## cp,mv - 
+
+- Copy, move or rename files and directories
+
+- Using cp, you can copy a file, a group of files, or a directory. A file is copied as an exact copy with a different file name to a disk. It is necessary to pass at least two file names to cp.
+
+~~~bash
+cp [OPTION] Source Destination
+cp [OPTION] Source Directory
+cp [OPTION] Source-1 Source-2 Source-3 Source-n Directory
+~~~
+
+### Examples
+
+~~~bash
+cd ~/sandbox # make sure we are at sandbox
+output=dir_root/dir_branch/dir_leaf
+# make a variable to store path
+mkdir -p $output # varify that output exists and if not create it
+mkdir -p dir_root/dir_branch2
+# Create  another branch in dir_root
+cp file $output # copy file to path
+mv file_1 $output # move file_1 to output
+ls $output # list files in output
+mv file $output/file_renamed
+# move file to output and rename it
+mkdir -p dir_1 dir_2
+mv -t dir_root/dir_branch2 dir_1 dir_2
+# move folders to --target-directory (long form of -t)
+cp -R dir_root/dir_branch2 $output
+# recursively copy folder content to path
+ls -FR $output # list files in output again
+~~~
+
+
 ## `tee` — Often we would like to write multi line files
 This command reads the contents of standard input, emits them to standard output, and makes a copy of them into the specified file(s) or variables.
 The purpose of this example is to create a `.bash_aliases` file containing all of your aliases and learn how to use the `tee` command. 

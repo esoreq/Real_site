@@ -190,6 +190,14 @@ Should look like this:
 
 <!-- ## Creating an environment from an environment.yml file  add tomorrow -->
 
+## What if we want full control over where our environment is?
+
+- Setting up a local folder where all the environments will be placed is one simple method
+- It makes it easier to manage your environments as you build increasingly specialized environments by having them in the same folder
+
+~~~bash
+conda config --append envs_dirs $HOME/env
+~~~
 
 ## Let's create a new environment 
 Armed with this information we will now create our first environment.
@@ -197,7 +205,7 @@ We will call this environment `FSL_sandbox` for reason i will explain in our nex
 
 
 ~~~bash
-conda create --name bash_sandbox && conda env list
+conda create --name FSL_sandbox && conda env list
 ~~~
 
 Recall that using a double `&` symbol means that the next command is only executed if the first one was successful.

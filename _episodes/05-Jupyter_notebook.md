@@ -476,7 +476,7 @@ tee ~/.local/share/jupyter/kernels/FSL_sandbox/kernel.json << END
 END
 ~~~
 
-## Test that your FSL_sandbox has access to fsl comands even 
+## Test that your FSL_sandbox has access to fsl commands even 
 
 Open the kernel menu and select `Restart Kernel and Clear All Outputs...`
 Now add a new cell and write `slicer` and run the cell
