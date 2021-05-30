@@ -4,9 +4,8 @@ root: .
 permalink: index.html  
 ---
 
-The best way to learn how to program is to do something useful,
-so this introduction to Python is built around a common scientific task:
-**data analysis**.
+“If you can’t explain it simply, you don’t understand it well enough.”
+> Albert Einstein
 
 <!-- this is an html comment -->
 
@@ -14,7 +13,7 @@ so this introduction to Python is built around a common scientific task:
 
 > ## Prerequisites
 >
-> FIXME
+> In order to succeed in this course, students must be curious and keep an open mind
 {: .prereq}
 
 {% include links.md %}
