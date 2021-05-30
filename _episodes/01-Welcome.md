@@ -1,8 +1,8 @@
 ---
 title: "Data science bootcamp"
-teaching: 10
+teaching: 15
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "30/05/2021"
 start: true
 exercises: 0
 questions:
@@ -19,7 +19,7 @@ keypoints:
 ## Before We Begins
 
 > ## Getting to know each other
-> Participants are invited to write their name, previous research experience, and why they would like to become neuroscientists in the shared notes section of the [etherpad](https://etherpad.wikimedia.org/p/test).
+> Participants are invited to write their name, previous research experience, and why they would like to become neuroscientists in the shared notes section of the [Data-science-bootcamp-day-1](https://etherpad.wikimedia.org/p/Data-science-bootcamp-day-1).
 {: .challenge}
 
 ## Introductions
