@@ -1,0 +1,54 @@
+---
+---
+{% include base_path.html %}
+{% include gh_variables.html %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="{{ site.time }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="{{ search_domain_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/syntax.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{ relative_root_path }}/assets/css/katex.min.css" /> -->
+    <link rel="license" href="#license-info" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    {% include favicons.html %}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  {% if page.title %}{{ page.title }}{% endif %}{% if page.title and site.title %} &ndash; {% endif %}{% if site.title %}{{ site.title }}{% endif %}
+  </title>  
+
+  </head>
+  <body>
+
+    {% include life_cycle.html %}
+
+    <div class="container">
+      {% include navbar.html %}
+{{ content }}
+      {% if site.kind == "workshop" %}
+      {% include workshop_footer.html %}
+      {% else %}
+      {% include lesson_footer.html %}
+      {% endif %}
+    </div>
+    {% include javascript.html %}
+  </body>
+</html>
