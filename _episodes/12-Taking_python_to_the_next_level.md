@@ -18,7 +18,15 @@ objectives:
 - Learn how to install a packages
 - Create a python_sandbox conda environment with a list of packages
 keypoints:
-- FIXME
+- Functions can be used for many different tasks
+- Lambda or anonymous functions are used to create inline trnasformations of data
+- Built-in functions are native to python
+- General purpose functions that are created to do something useful
+- The two most important reasons that we use functions are *reusability* and *abstraction*
+- You call a function, using it's name followed by parenthesis `()`
+- A parameter is a variable name declared when the function is created
+- A variable is only available from inside the region it is created. This is called scope.
+- Arguments are the data you pass into the method's parameters
 ---
 
 # What are Functions?

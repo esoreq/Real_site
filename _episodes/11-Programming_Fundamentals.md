@@ -1,7 +1,8 @@
 ---
 title: "Programming Fundamentals using Python"
 author: "Dr. Eyal Soreq" 
-date: "01/06/2021"
+date: "02/06/2021"
+start: true
 teaching: 35
 exercises: 25
 questions:
