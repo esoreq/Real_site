@@ -2,7 +2,7 @@
 title: "Jupyter lab revisited"
 author: "Dr. Eyal Soreq" 
 date: "02/06/2021"
-teaching: 45
+teaching: 25
 exercises: 0
 questions:
 - What are Magic commands?
