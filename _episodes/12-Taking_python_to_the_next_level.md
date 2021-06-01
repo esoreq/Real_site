@@ -2,7 +2,6 @@
 title: "Taking python to the next level"
 author: "Dr. Eyal Soreq" 
 date: "02/06/2021"
-start: true
 teaching: 40
 exercises: 20
 questions:
