@@ -2,6 +2,7 @@
 title: "Taking python to the next level"
 author: "Dr. Eyal Soreq" 
 date: "02/06/2021"
+start: true
 teaching: 40
 exercises: 20
 questions:
@@ -18,15 +19,7 @@ objectives:
 - Learn how to install a packages
 - Create a python_sandbox conda environment with a list of packages
 keypoints:
-- Functions can be used for many different tasks
-- Lambda or anonymous functions are used to create inline trnasformations of data
-- Built-in functions are native to python
-- General purpose functions that are created to do something useful
-- The two most important reasons that we use functions are *reusability* and *abstraction*
-- You call a function, using it's name followed by parenthesis `()`
-- A parameter is a variable name declared when the function is created
-- A variable is only available from inside the region it is created. This is called scope.
-- Arguments are the data you pass into the method's parameters
+- FIXME
 ---
 
 # What are Functions?
@@ -60,7 +53,7 @@ function
 ~~~
 {: .output}
 
-- You call a function, using it's name followed by parenthesis
+- You call a function, useing it's name followed by parenthesis
 
 ~~~python
 my_first_function()
@@ -175,7 +168,7 @@ NameError: name 'last_name' is not defined
 
 ~~~python
 def my_fourth_function(first_name='Eyal',last_name='Soreq'):
-    print(f"Hello this function is {first_name} {last_name}'s fourth function")
+    print(f"Hello this function is {first_name} {last_name} fourth function")
 my_fourth_function()
 ~~~
 
@@ -189,6 +182,7 @@ Hello this function is Eyal Soreq fourth function
 
 
 # Adding docstrings to functions to help you
+
 
 ~~~python
 help(my_fourth_function)
@@ -231,6 +225,8 @@ my_fourth_function(first_name='Eyal', last_name='Soreq')
 - For example, the function below is used to convert numeric age to a categorical age_group?
 
 
+
+
 ~~~python
 def age_group(age):
     if age<=11:
@@ -257,6 +253,7 @@ print(list(map(age_group,  list(range(1,90,3)))))
 - Map() can accept more than one iterable. 
 - However, the iterables should be the same length
 - If they are not, the shortest iterable will terminate the function
+
 
 
 ~~~python
@@ -376,6 +373,8 @@ print(list(map(age2group,  list(range(1,30,1)))))
 
 
 
+
+
 # Python Classes and Methods
 
 In Python, most code is implemented with a special construct called a class, which is one of the core features of object-oriented programming. Classes are used by programmers to group related items together. Classes allow us to combine methods and attributes which share a common purpose.
@@ -474,69 +473,57 @@ mfc_1 name is my init name attribute and it's id is 3
 ~~~
 {: .output}
 
-# Python *args and **kwargs
 
-In Python, we can pass a variable number of arguments to a function using special symbols. 
+# This answers the question raised in the feedback 
+ > "*For example, in Matlab you usually put the function first and then parameters/variables etc in backets. like 'Sort(variable)'. But in python, you sometimes use the "dot notation" like 'variable.sort', but also print(...variable...). What is the underlying rationale here? These are the little things that we sometimes skip ...*"
 
-There are two special symbols:
-1. *args (Non Keyword Arguments)
-1. **kwargs (Keyword Arguments)
+ - The distinction between the two different perspectives relate to data structures and internal methods
+ - In the first case we pass a variable into some function and apply some logic on it 
 
-We use `*args` and `**kwargs` as an argument when we are unsure about the number of arguments to pass in the functions.
+ ~~~python
+ some_list = list(range(1,99))
+ some_generator = lambda X: [(263*x+71%100)%100 for x in X]
+ some_generator(some_list)
+ ~~~
 
-# Python *args
 
-- The parameters inside `*args` are passed as a tuple, and the passed arguments are defined inside the function with the same name as the parameter, excluding the asterisk *.
-- You can include any number of variable and all will be contained inside `args`
+ - In the second we have some internal method that was designed to provide some functionality 
 
-~~~python 
-def testing_args(*args):
-    print(args)
-    print(type(args))
-    
-testing_args(range(10,30,5),'a','b')
+~~~python
+import random
+
+class Some_generator:
+
+    def __init__(self,seq,seed=263):
+        random.seed(seed)
+        self.seq = list(seq)
+        self.seed = seed
+
+    def __repr__(self):
+        return f"<sequence {self.__str__()}>"
+
+    def __str__(self):
+        return ",".join([str(x) for x in self.seq])
+
+    def scramble(self):
+        random.shuffle(self.seq)
+        return self
 ~~~
 
-~~~
-(range(10, 30, 5), 'a', 'b')
-<class 'tuple'>
-~~~
-{: .output}
-
-- We cannot use this method to pass keywords to Python functions.
-
-# Python **kwargs
- Python has a  solution called `**kwargs`, which lets you pass variable-length keyword arguments to functions.
-
-~~~python 
-def testing_kwargs(**kwargs):
-    print(f"Type of kwargs:{type(kwargs)}")
-    for key, value in kwargs.items():
-        print(f"{key} is {value}")
-
-testing_kwargs(question_01="What... is your name?",
-               response_01="My name is 'Sir Lancelot of Camelot'.",
-               question_02="What... is your quest?",
-               response_02="To seek the Holy Grail.",
-               question_03="What... is your favorite color?",
-               response_03="Blue.",
-               conclusion= "Right. Off you go.")
+~~~python
+rand_seq = Some_generator(range(10))
+rand_seq.scramble() # everytime we call scramble we shuffle the list
 ~~~
 
-
-
+~~~python
+rand_seq = Some_generator('everytime we call scramble we shuffle the list')
+"".join(rand_seq.scramble().seq) # This is not limited to numbers can use any iterable for example letters 
 ~~~
-Type of kwargs:<class 'dict'>
-question_01 is What... is your name?
-response_01 is My name is 'Sir Lancelot of Camelot'.
-question_02 is What... is your quest?
-response_02 is To seek the Holy Grail.
-question_03 is What... is your favorite color?
-response_03 is Blue.
-conclusion is Right. Off you go.
-~~~
-{: .output}
 
+~~~python
+rand_seq = Some_generator('everytime we call scramble we shuffle the list'.split())
+" ".join(rand_seq.scramble().seq) # Or words
+~~~
 
 ## Links to expand your understanding 
 
