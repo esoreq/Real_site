@@ -3,7 +3,7 @@ title: "Data structures in Python"
 author: "Dr. Eyal Soreq" 
 date: "01/06/2021"
 teaching: 30
-exercises: 20
+exercises: 30
 questions:
 - What are Data structures?
 - What types of data structures are there?

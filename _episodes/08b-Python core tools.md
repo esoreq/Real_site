@@ -3,7 +3,7 @@ title: "Variables and Basic Data Types"
 author: "Dr. Eyal Soreq" 
 date: "01/06/2021"
 teaching: 30
-exercises: 20
+exercises: 40
 questions:
 - How can I store data in python?
 - What types of Data can I store? 
@@ -130,12 +130,12 @@ print(f'{type(my_complex_variable)}')
 ~~~python
 x,y = 5,4
 print(f"+ Addition :\t{x}+{y}={x+y}") 
-print(f"- Substraction :\t {x}-{y}={x-y}")
 print(f"* Multiplication :\t {x}*{y}={x*y}")
 print(f"/ Division :\t {x}/{y}={x/y}")
+print(f"- Substraction :\t {x}-{y}={x-y}")
 print(f"% Modulus :\t {x}%{y}={x%y}")
-print(f"** Exponent :\t {x}^{y}={x**y}")
 print(f"// Floor Division :\t {x}/{y}={x//y}")
+print(f"** Exponent :\t {x}^{y}={x**y}")
 print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y)}")
 ~~~
 
@@ -149,6 +149,50 @@ print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y)}")
 >>** Exponent :	 5^4=625
 >>// Floor Division :	 5/4=1
 >>() Use parentheses to specify order:	 5*(5/4-4)=-13.75
+> > ~~~
+> > {: .output}
+{: .solution}
+
+### E1. Try to fill in the right side of the equation to produce the following output
+
+~~~
+x,y = -12,2 # given numbers
+# ? = -6.0 
+# ? = -10
+# ? = -14
+# ? = 0
+# ? = 144.0
+# ? = 0.0+3.5j 
+# ? = 96.0
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using while
+> > ~~~python
+x,y = -12,2
+
+print(f"* Multiplication :\t {x}*{y}={x*y}")
+print(f"/ Division :\t {x}/{y}={x/y}")
+print(f"+ Addition :\t{x}+{y}={x+y}") 
+print(f"- Substraction :\t {x}-{y}={x-y}")
+print(f"% Modulus :\t {x}%{y}={x%y}")
+print(f"// Floor Division :\t {x}/{y}={x//y}")
+print(f"** Exponent :\t {x}^{y}={x**y:.1f}")
+print(f"** square root :\t {x}^{0.5}={x**0.5:.1f}")
+print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y):.1f}")
+> > ~~~
+> > ~~~python
+> >* Multiplication :	 -12*2=-24
+> >/ Division :	 -12/2=-6.0
+> >+ Addition :	-12+2=-10
+> >- Substraction :	 -12-2=-14
+> >% Modulus :	 -12%2=0
+> >// Floor Division :	 -12/2=-6
+> >** Exponent :	 -12^2=144.0
+> >** square root :	 -12^0.5=0.0+3.5j
+> >() Use parentheses to specify order:	 -12*(-12/2-2)=96.0
 > > ~~~
 > > {: .output}
 {: .solution}
@@ -484,7 +528,7 @@ Some times we want to find how long is a string  = 47
 
 # So how can we navigate this sequence? 
 
-- To go to a specific index in a string, we use brackets \[\]
+- To go to a specific index in a string, we use brackets `[ ]`
 - Remember that indexing starts at 0 for Python
 - Consider the following:
 
