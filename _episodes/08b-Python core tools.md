@@ -153,50 +153,6 @@ print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y)}")
 > > {: .output}
 {: .solution}
 
-### E1. Try to fill in the right side of the equation to produce the following output
-
-~~~
-x,y = -12,2 # given numbers
-# ? = -6.0 
-# ? = -10
-# ? = -14
-# ? = 0
-# ? = 144.0
-# ? = 0.0+3.5j 
-# ? = 96.0
-~~~
-{: .output}
-
-
-> ## Here is one possible solution
-> > ## using while
-> > ~~~python
-x,y = -12,2
-
-print(f"* Multiplication :\t {x}*{y}={x*y}")
-print(f"/ Division :\t {x}/{y}={x/y}")
-print(f"+ Addition :\t{x}+{y}={x+y}") 
-print(f"- Substraction :\t {x}-{y}={x-y}")
-print(f"% Modulus :\t {x}%{y}={x%y}")
-print(f"// Floor Division :\t {x}/{y}={x//y}")
-print(f"** Exponent :\t {x}^{y}={x**y:.1f}")
-print(f"** square root :\t {x}^{0.5}={x**0.5:.1f}")
-print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y):.1f}")
-> > ~~~
-> > ~~~python
-> >* Multiplication :	 -12*2=-24
-> >/ Division :	 -12/2=-6.0
-> >+ Addition :	-12+2=-10
-> >- Substraction :	 -12-2=-14
-> >% Modulus :	 -12%2=0
-> >// Floor Division :	 -12/2=-6
-> >** Exponent :	 -12^2=144.0
-> >** square root :	 -12^0.5=0.0+3.5j
-> >() Use parentheses to specify order:	 -12*(-12/2-2)=96.0
-> > ~~~
-> > {: .output}
-{: .solution}
-
 
 # Basic Arithmetic operations on floats 
 
@@ -322,6 +278,7 @@ x //= y;print(f" x //= y\t| x//y is assigned to x\t| x={x}")
 - AND operator returns True if both the operands (right side and left side) are True
 - OR operator returns True if either of the operand (right side or left side) is True
 - NOT operator returns True if the operand is False
+
 
 ~~~python
 x,y = True,False
@@ -735,6 +692,51 @@ print(f"{some_number} in binary is {some_number:>08b}")
 > > {: .output}
 {: .solution}
 
+
+
+### E1. Try to fill in the right side of the equation to produce the following output
+
+~~~
+x,y = -12,2 # given numbers
+# ? = -6.0 
+# ? = -10
+# ? = -14
+# ? = 0
+# ? = 144.0
+# ? = 0.0+3.5j 
+# ? = 96.0
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using while
+> > ~~~python
+x,y = -12,2
+
+print(f"* Multiplication :\t {x}*{y}={x*y}")
+print(f"/ Division :\t {x}/{y}={x/y}")
+print(f"+ Addition :\t{x}+{y}={x+y}") 
+print(f"- Substraction :\t {x}-{y}={x-y}")
+print(f"% Modulus :\t {x}%{y}={x%y}")
+print(f"// Floor Division :\t {x}/{y}={x//y}")
+print(f"** Exponent :\t {x}^{y}={x**y:.1f}")
+print(f"** square root :\t {x}^{0.5}={x**0.5:.1f}")
+print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y):.1f}")
+> > ~~~
+> > ~~~python
+> >* Multiplication :	 -12*2=-24
+> >/ Division :	 -12/2=-6.0
+> >+ Addition :	-12+2=-10
+> >- Substraction :	 -12-2=-14
+> >% Modulus :	 -12%2=0
+> >// Floor Division :	 -12/2=-6
+> >** Exponent :	 -12^2=144.0
+> >** square root :	 -12^0.5=0.0+3.5j
+> >() Use parentheses to specify order:	 -12*(-12/2-2)=96.0
+> > ~~~
+> > {: .output}
+{: .solution}
 
 
 ## Links to expand your understanding 
