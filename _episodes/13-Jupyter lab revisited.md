@@ -1,7 +1,8 @@
 ---
 title: "Jupyter lab revisited"
 author: "Dr. Eyal Soreq" 
-date: "02/06/2021"
+date: "03/06/2021"
+start: true
 teaching: 25
 exercises: 0
 questions:
@@ -14,6 +15,9 @@ keypoints:
 - Magic commands are enhancements created for the interactive Python project
 - Line magics, which are denoted by a single % prefix and operate on a single line of input
 - Cell magics, which are denoted by a double %% prefix and operate on multiple lines of input
+- The  autoreload extension tracks any changes in your imports and will *auto* *reload* them to your scope 
+- The %whos magic command plots a list of variables in your environment. 
+- The %system magic command and the `!` symbol give direct accsess to the shell 
 ---
 
 
@@ -360,6 +364,13 @@ hdr = !fslinfo ~/fsl/data/standard/MNI152_T1_1mm_brain.nii.gz
 ~~~
 {: .output}
 
+## Links to expand your understanding 
+
+For those interested in learning more...
+
+- [Built-in magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
+- [Built-in magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
+- [Cell-magic](https://python-tools-for-students.readthedocs.io/en/latest/material/1_jupyter/1_jupyter.html#Cell-magic)
 
 
 {% include links.md %}

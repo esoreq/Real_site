@@ -539,6 +539,6 @@ For those interested in learning more...
 - [python-scope-legb-rule](https://realpython.com/python-scope-legb-rule/)
 - [lambda-expressions](https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions)
 - [filter](https://docs.python.org/3/library/functions.html#filter) 
-
+- [writing-functions-in-python](https://learn.datacamp.com/courses/writing-functions-in-python)
 
 {% include links.md %}
