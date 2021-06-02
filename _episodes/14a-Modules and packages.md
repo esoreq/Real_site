@@ -344,6 +344,7 @@ channels:
   - conda-forge
 dependencies:
   - numpy
+  - nibabel
   - pandas
   - scipy
   - statsmodels
@@ -353,7 +354,6 @@ dependencies:
   - seaborn
   - plotly
 prefix: /home/jovyan/envs/SYS_2021
-
 
 END
 
