@@ -8,15 +8,10 @@ questions:
 - What are Functions?
 - What are Classes?
 - What are Methods?
-- What are Modules? 
-- What are Packages?
+
 objectives:
 - Learn how to write functions 
 - Understand what a class is 
-- Understand how to create a module 
-- Learn how to load a local module 
-- Learn how to install a packages
-- Create a python_sandbox conda environment with a list of packages
 keypoints:
 - Functions can be used for many different tasks
 - Lambda or anonymous functions are used to create inline trnasformations of data
