@@ -352,6 +352,9 @@ dependencies:
   - matplotlib
   - seaborn
   - plotly
+  - pip
+  - ipykernel
+  - nb_conda_kernels
   - pip: 
     - nibabel
 prefix: /home/jovyan/envs/SYS_2021
@@ -416,6 +419,21 @@ mv -v .local/ .local.gwdg-disable
 
 - This can be done using `conda env remove` and `jupyter kernelspec remove`
 - Or if you are brave just delete the specific kernel and env folder   
+
+# What about updating packages (adding or removing?)
+
+- Just use the following (after you updated the file)
+
+~~~bash
+conda env update --name SYS_2021 --file ~/SYS_2021/SYS_2021.yml
+~~~
+
+# What about updating the contents of the environment 
+
+~~~bash
+conda update --name SYS_2021 --all
+~~~
+
 
 
 ## Links to expand your understanding 
