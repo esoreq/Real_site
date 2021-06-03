@@ -362,7 +362,7 @@ prefix: /home/jovyan/envs/SYS_2021
 END
 
 conda env create --file  ~/SYS_2021/SYS_2021.yml
-
+conda activate SYS_2021
 python -m ipykernel install --user --name SYS_2021 --display-name "Python (SYS_2021)"
 
 ~~~
