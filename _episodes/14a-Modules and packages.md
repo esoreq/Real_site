@@ -385,6 +385,17 @@ sys.path.append("../Code/")
 %autoreload 2
 ~~~
 
+## Step 5. If everything works 
+
+- I mentioned that we can export our environment once everything is working properly
+- By using the following command, you can create a tml file that captures all the dependencies that your project depends on
+- While conda does have some versioning under the hood, a simple approach to exporting stable environments can save you and any potential collaborators hours of work and frustration.
+
+~~~
+! conda env export --name SYS_2021 > ~/SYS_2021/env_03062021.yml
+~~~
+
+
 # What to do when things go wrong
 
 - Here's what you do when your Notebook won't start, your Kernel won't connect, or the environments you created have grown out of control and you have to start over.
