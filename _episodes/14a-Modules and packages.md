@@ -357,6 +357,7 @@ dependencies:
   - nb_conda_kernels
   - pip: 
     - nibabel
+
 prefix: /home/jovyan/envs/SYS_2021
 
 END
