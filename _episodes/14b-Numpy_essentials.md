@@ -2,7 +2,7 @@
 title: "Numpy essentials (with a touch of matplotlib)"
 author: "Dr. Eyal Soreq" 
 date: "03/06/2021"
-teaching: 55
+teaching: 120
 exercises: 0
 questions:
 - How to use Matplotlib?
@@ -104,18 +104,77 @@ display(array_2d_tall ** X)
 display(array_2d_tall - X)
 ~~~
 
-# Broadcasting
-
-The term broadcasting refers to the ability of NumPy to treat arrays of different shapes during arithmetic operations. Arithmetic operations on arrays are usually done on corresponding elements. If two arrays are of exactly the same shape, then these operations are smoothly performed[1](https://www.tutorialspoint.com/numpy/numpy_broadcasting.htm).
+# Limitation of Array Arithmetic
+-You can perform arithmetic directly on NumPy arrays, such as addition and subtraction.
+- Strictly, arithmetic may only be performed on arrays that have the same dimensions and dimensions with the same size.
+- This means that a one-dimensional array with the length of 5 can only perform arithmetic with another one-dimensional array with the length 5.
 
 
 ~~~python
-a = np.array([range(2,7)]) 
-b = np.array([range(-12,-7)])
+a = np.array([range(1,5)])
+b = np.array(a)
+print(f'''
+    a = {a}
+    b = {b}
+    c =  {a + b}
+''')
+~~~
+
+# But what happnes when we try to do the following ?
+
+~~~python
+a = np.array([range(1,5)]) 
+b = np.array([range(4,6)])
 c = a * b
 d = a + b
 ~~~
 
+# Broadcasting
+
+- Broadcasting is the name given to the method that NumPy uses to allow array arithmetic between arrays with a different shape or size.
+- Broadcasting solves the problem of arithmetic between arrays of differing shapes by in effect replicating the smaller array along the last mismatched dimension.
+
+# Examples 
+
+## operating on 1D and 2D arrays (Broadcasting)
+
+~~~python
+x = np.array(range(1,8))  # base_1D_vector (!NO WIDTH)
+a = np.array([x])
+b = np.array([x]).T
+c = np.array([x,x[::-1]])
+~~~
+
+~~~python
+print(f'''
+    a + b = {a + b}
+    a + c = {a + c}
+    c + b =  {c + b}
+''')
+~~~
+
+## !!!! What do I need to do to make the last statement work?
+
+
+# Limitations of Broadcasting
+
+- Arithmetic, including broadcasting, can only be performed when the shape of each dimension in the arrays are equal or one has the dimension size of 1. The dimensions are considered in reverse order, starting with the trailing dimension; for example, looking at columns before rows in a two-dimensional case.
+
+
+- But even if the arrays are not the same shape some interesting things can be done with broadcasting consider the following examples :
+
+~~~python
+a = np.array([range(1,11)]).T 
+b = np.array([range(1,11)])
+display(a*b)
+~~~
+
+## Rule of thumb: For Broadcasting to work the missmatching dimensions should be 1 in one of the arrays
+
+
+# Visualization as a discovery tool
+> *"The greatest value of a picture is when it forces us to notice what we never expected
+to see.* **John W Tukey**
 
 
 
@@ -134,12 +193,6 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 plt.style.use('bmh')
 ~~~
-
-# Visualization as a discovery tool
-> *"The greatest value of a picture is when it forces us to notice what we never expected
-to see.* **John W Tukey**
-
-
 
 ## lets look at these 
 
@@ -532,10 +585,217 @@ display(np.sum(x))
 ~~~
 
 
+# Combining everything we learned so far by doing some exercises 
+
+- 
+
+### E1. Use Numpy to create the following 
+
+~~~
+[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20],
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30],
+[4, 8, 12, 16, 20, 24, 28, 32, 36, 40],
+[5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+[6, 12, 18, 24, 30, 36, 42, 48, 54, 60],
+[7, 14, 21, 28, 35, 42, 49, 56, 63, 70],
+[8, 16, 24, 32, 40, 48, 56, 64, 72, 80],
+[9, 18, 27, 36, 45, 54, 63, 72, 81, 90],
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using list comprehensions
+> > ~~~python
+[[row*col for row in range(1,11)] for col in range(1,11)]
+> > ~~~
+> > ## using numpy
+> > ~~~python
+x = np.array(range(1,11))
+np.array([x]) * np.array([x]).T
+> > ~~~
+{: .solution}
+
+
+### E2. Use Numpy to create the following 
+
+~~~
+array([[ 2,  3,  4],
+       [ 5,  6,  7],
+       [ 8,  9, 10]])
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using for loop
+> > ~~~python
+c = 2
+grid = np.ones((3,3))
+for i in range(3):
+    for j in range(3):
+        grid[i,j]= c
+        c += 1
+> > ~~~
+> > ## using numpy
+> > ~~~python
+x = np.array(range(2,11)).reshape(3,-1)
+> > ~~~
+{: .solution}
+
+### E3. A simple one 
+
+~~~
+[ 0. 0. 3. 0. 0. 0. 11. 0. 7. 0.]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using for loop
+> > ~~~python
+row = np.zeros((1,10),dtype=float)
+for i,v in zip([2,6,8],[3,11,7]):
+    row[0,i] = v
+print(row)   
+> > ~~~
+> > ## using numpy
+> > ~~~python
+row = np.zeros((1,10),dtype=float)
+row[0,[2,6,8]] = [3,11,7]
+print(row)
+> > ~~~
+{: .solution}
+
+
+### E4. Another  simple one 
+
+~~~
+[[ 25  28  31  34  37  40  43  46  49]
+ [ 52  55  58  61  64  67  70  73  76]
+ [ 79  82  85  88  91  94  97 100 103]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using for loop
+> > ~~~python
+grid = np.zeros((3,9),dtype=int)
+v = 25
+for i in range(grid.shape[0]):
+    for j in range(grid.shape[1]):
+        grid[i,j] = v
+        v += 3 
+print(grid)   
+> > ~~~
+> > ## using numpy
+> > ~~~python
+print(np.array(range(25,106,3)).reshape(3,-1))
+> > ~~~
+{: .solution}
+
+
+### E5. Another simple one - using the previous array reverse both rows and columns 
+
+~~~
+[[103 100  97  94  91  88  85  82  79]
+ [ 76  73  70  67  64  61  58  55  52]
+ [ 49  46  43  40  37  34  31  28  25]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using for loop
+> > ~~~python
+new_grid = np.zeros((3,9),dtype=int)
+for i_,io in enumerate(range(grid.shape[0]-1,-1,-1)):
+    for j_,jo in enumerate(range(grid.shape[1]-1,-1,-1)):
+        new_grid[i_,j_] = grid[io,jo]
+print(new_grid)   
+> > ~~~
+> > ## using numpy
+> > ~~~python
+print(grid[::-1,::-1])
+> > ~~~
+{: .solution}
+
+
+### E6. Another simple one - using the previous array convert it to type float
+
+~~~
+[[103 100  97  94  91  88  85  82  79]
+ [ 76  73  70  67  64  61  58  55  52]
+ [ 49  46  43  40  37  34  31  28  25]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using for numpy
+> > ~~~python
+new_grid = grid[::-1,::-1].astype(float)
+> > ~~~
+{: .solution}
+
+### E7. Another simple one - using the previous array convert it to the following output
+
+~~~
+[[1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 0 0 0]
+ [0 0 0 0 0 0 0 0 0]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using numpy
+> > ~~~python
+print(1*(new_grid>60))
+> > ~~~
+{: .solution}
+
+
+
+### E8. Write a NumPy program to create a 10x10 checkerboard pattern.
+
+~~~
+[[1 0 1 0 1 0 1 0 1 0]
+ [0 1 0 1 0 1 0 1 0 1]
+ [1 0 1 0 1 0 1 0 1 0]
+ [0 1 0 1 0 1 0 1 0 1]
+ [1 0 1 0 1 0 1 0 1 0]
+ [0 1 0 1 0 1 0 1 0 1]
+ [1 0 1 0 1 0 1 0 1 0]
+ [0 1 0 1 0 1 0 1 0 1]
+ [1 0 1 0 1 0 1 0 1 0]
+ [0 1 0 1 0 1 0 1 0 1]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using numpy and indexing 
+> > ~~~python
+grid = np.ones((10,10),dtype=int)
+grid[1::2,::2] = 0
+grid[::2,1::2] = 0
+> > ~~~
+> > ## using numpy and tile 
+> > ~~~python
+np.tile(np.array([[0,1],[1,0]]),(5,5))
+> > ~~~
+{: .solution}
+
 ## Links to expand your understanding 
 
 For those interested in learning more...
 
 - [Scipy Lecture Notes](https://scipy-lectures.org/intro/numpy/operations.html)
 - [matplotlib](https://matplotlib.org/2.0.2/users/pyplot_tutorial.html)
+
+- [EricsBroadcastingDoc] (https://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc)
 {% include links.md %}
