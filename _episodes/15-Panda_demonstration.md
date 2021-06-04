@@ -1,6 +1,7 @@
 ---
 title: "Panda_demonstration"
 author: "Dr. Eyal Soreq" 
+start: true
 date: "04/06/2021"
 teaching: 120
 exercises: 0
