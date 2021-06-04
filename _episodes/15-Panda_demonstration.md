@@ -1466,7 +1466,7 @@ data["subjects"]['M/F'].value_counts().plot.pie()
 
 
     
-![png](output_37_1.png)
+![png](../fig/output_37_1.png)
     
 
 
@@ -1511,7 +1511,7 @@ data["subjects"]['M/F'].value_counts().plot.bar(label='index', color=colors[0:2]
 
 
     
-![png](output_40_1.png)
+![png](../fig/output_40_1.png)
     
 
 
@@ -1542,7 +1542,7 @@ ax.legend(loc='upper left',
 
 
     
-![png](output_43_1.png)
+![png](../fig/output_43_1.png)
     
 
 
@@ -1783,7 +1783,7 @@ data['ADRCClinicalData'].plot.scatter('Age','Days Since Admission')
 
 
     
-![png](output_56_1.png)
+![png](../fig/output_56_1.png)
     
 
 
@@ -1801,7 +1801,7 @@ data['ADRCClinicalData'].plot.scatter('Age','Days Since Admission')
 
 
     
-![png](output_57_1.png)
+![png](../fig/output_57_1.png)
     
 
 
@@ -1819,7 +1819,7 @@ data['ADRCClinicalData'].plot.scatter('Days Since Admission','cdr')
 
 
     
-![png](output_58_1.png)
+![png](../fig/output_58_1.png)
     
 
 
@@ -1868,7 +1868,7 @@ data['ADRCClinicalData'].plot.scatter('cdr','mmse')
 
 
     
-![png](output_61_1.png)
+![png](../fig/output_61_1.png)
     
 
 
@@ -1886,7 +1886,7 @@ data['ADRCClinicalData'].plot.scatter('Age','mmse')
 
 
     
-![png](output_62_1.png)
+![png](../fig/output_62_1.png)
     
 
 
@@ -1904,7 +1904,7 @@ data['ADRCClinicalData'].plot.scatter('mmse','Days Since Admission')
 
 
     
-![png](output_63_1.png)
+![png](../fig/output_63_1.png)
     
 
 
@@ -1922,7 +1922,7 @@ data['ADRCClinicalData'].plot.scatter('cdr','Days Since Admission')
 
 
     
-![png](output_64_1.png)
+![png](../fig/output_64_1.png)
     
 
 
@@ -1960,7 +1960,7 @@ delta.plot.scatter('Age_start','delta_cdr')
 
 
     
-![png](output_67_1.png)
+![png](../fig/output_67_1.png)
     
 
 
@@ -1978,7 +1978,7 @@ delta.plot.scatter('Age_start','delta_mmse')
 
 
     
-![png](output_68_1.png)
+![png](../fig/output_68_1.png)
     
 
 
@@ -2185,7 +2185,7 @@ delta.plot.scatter('delta_mmse','delta_cdr')
 
 
     
-![png](output_70_1.png)
+![png](../fig/output_70_1.png)
     
 
 
@@ -2205,7 +2205,7 @@ rng = np.random.default_rng()
 
 
     
-![png](output_71_1.png)
+![png](../fig/output_71_1.png)
     
 
 
@@ -3432,19 +3432,19 @@ eda_e.groupby('Diagnosis_end').plot.scatter('delta_mmse','delta_cdr')
 
 
     
-![png](output_86_1.png)
+![png](../fig/output_86_1.png)
     
 
 
 
     
-![png](output_86_2.png)
+![png](../fig/output_86_2.png)
     
 
 
 
     
-![png](output_86_3.png)
+![png](../fig/output_86_3.png)
     
 
 
@@ -3582,7 +3582,7 @@ sns.scatterplot(data=data, x="delta_mmse", y="delta_cdr", hue="Diagnosis_end",ax
 
 
     
-![png](output_89_1.png)
+![png](../fig/output_89_1.png)
     
 
 
@@ -3604,7 +3604,7 @@ sns.scatterplot(x=eda_e["delta_mmse"]+rng.normal(0,0.05,n),
 
 
     
-![png](output_90_1.png)
+![png](../fig/output_90_1.png)
     
 
 
@@ -3631,7 +3631,7 @@ sns.scatterplot(x=eda_e["delta_mmse"]+rng.normal(0,0.05,n),
 
 
     
-![png](output_92_1.png)
+![png](../fig/output_92_1.png)
     
 
 
