@@ -1,4 +1,3 @@
-
 ---
 title: "Setup your home directory"
 author: "Dr. Eyal Soreq" 
@@ -7,9 +6,11 @@ date: "07/06/2021"
 teaching: 60
 exercises: 0
 questions:
+- Going over the setup process 
 objectives:
-- Learn how to setup your home directory again :)
+- Learn how to setup conda env 
 keypoints:
+- setting up both MCN and SYS
 
 ---
 
