@@ -27,7 +27,7 @@ keypoints:
 | [Week-08-Standardized evaluation of algorithms for computer-aided diagnosis ofdementia based on structural MRI]('../files/Week-08.pdf')  | Jennifer Sander, Ofure Okoh   & Sebastian Henn  |
 | [Week-09-A distributed brain network predicts general intelligence from resting-state human neuroimaging data]('../files/Week-09.pdf') | Janis Keck, Hanna Wiedenhaus  &  Muhammad Hashim Satti   |
 
-
+<a href="../files/Week-09.pdf" download>
 
 Plan your 30 minutes, roughly 20-25 minutes of talk with slides, and 5+ minutes of questions and discussion.
 Your talk should have the following sections: 
