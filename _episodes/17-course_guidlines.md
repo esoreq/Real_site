@@ -13,7 +13,9 @@ objectives:
 - Each session will begin with a group presentation of one of the papers below
 ---
 
-## Our course will cover a range of topics from data science to machine  learning. Each session in the course will begin with a group presentation on a recent paper relevant to the week's topic. A day before the talk, each group should send its presentation. Presentations can take any form as long as they adhere to the guidelines below
+# Group assignment 
+
+Our course will cover a range of topics from data science to machine  learning. Each session in the course will begin with a group presentation on a recent paper relevant to the week's topic. A day before the talk, each group should send its presentation. Presentations can take any form as long as they adhere to the guidelines below
 
 
 
