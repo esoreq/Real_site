@@ -17,7 +17,7 @@ keypoints:
 
 | Paper | Group | 
 | :---- | ----  | 
-| ![Week-02-Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks]('../files/Week-02-Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks.pdf')      | Irene Amato &  Anisbel Len |
+| [Week-02 Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks]('../files/Week-02-Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks.pdf')      | Irene Amato &  Anisbel Len |
 
 
 
