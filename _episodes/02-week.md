@@ -167,7 +167,7 @@ abstracts do not need references
 ```
 
 
-
+~~~latex
 \begin{abstract}
 Insert ABSTRACT here according to subheadings and structure below;
 general rules of thumb for abstract writing: 
@@ -179,7 +179,7 @@ p-values should always be accompanied by supporting data
 denominators should be given for percentages
 abstracts do not need references 
 \end{abstract}
-
+~~~~
 
 
 This method can be used to inject any latex box in theory. 
