@@ -963,19 +963,10 @@ def load_data(stage='raw',input_path='../Data/csv/',input_name='fake_data',reapp
 df = load_data('raw',reapply=True)
 ```
 
-    CPU times: user 373 ms, sys: 15.8 ms, total: 389 ms
-    Wall time: 410 ms
-
-
-
 ```python
 %%time
 df = load_data('processed',reapply=True)
 ```
-
-    CPU times: user 354 ms, sys: 23 ms, total: 377 ms
-    Wall time: 394 ms
-
 
 
 ```python
@@ -983,19 +974,11 @@ df = load_data('processed',reapply=True)
 df = load_data('raw')
 ```
 
-    CPU times: user 20.7 ms, sys: 0 ns, total: 20.7 ms
-    Wall time: 25.1 ms
-
-
 
 ```python
 %%time
 df = load_data('processed')
 ```
-
-    CPU times: user 374 ms, sys: 1.22 ms, total: 375 ms
-    Wall time: 397 ms
-
 
 
 ## We finish our notebook with a pdf export to keep a "hard copy" of what we did 
@@ -1013,5 +996,15 @@ jupyter nbconvert --output pdf/How_to_clean_data_$1_$2.pdf --config cfg.py  How_
 - To add an exclusion step in our load_data pipeline 
 
 
+# An obvious exercise for those who wish to challenge themselves
+
+Throughout the course, concrete examples of code will be shown and sometimes assignments will be given. Today's session includes two personal assignments (not mandatory):  
+1. Build your own pipeline for the end-of-course dataset 
+  - Load the data and profile it 
+  - Identify potential issues 
+  - Establish rules for dealing with them 
+1. Build your own pipeline for your own rotation dataset 
+  - What are the unique challenges your data presents? 
+  - To adapt to these changes, how would you change the simple template introduced today? 
 
 
