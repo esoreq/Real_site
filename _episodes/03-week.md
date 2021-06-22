@@ -614,7 +614,7 @@ It is obvious that this simulates a very problematic dataset. When we encounter 
 ls ../Data
 ```
 
-    [0m[01;34mcsv[0m/  [01;34mpkl[0m/  [01;34mzip[0m/
+    csv/  pkl/  zip/
 
 
 ## Pandas output formats 
